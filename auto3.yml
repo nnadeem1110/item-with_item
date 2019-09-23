@@ -1,0 +1,13 @@
+#To add users using key and keypair using variables:
+---
+       - hosts: test2
+         become: true
+         tasks:
+                 - name: adding user
+                   user:
+                           name: "{{ item }}"
+                           state: present
+                   with_items:
+                           - user1
+                           - user2
+                           - user3
